@@ -25,7 +25,9 @@ SECRET_KEY = 'pz&09&n!prcy5ndfwqa!6@02x2$+fs2wxmw4f1+)$t-wz_j((9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["masterblender.pythonanywhere.com"]
+ALLOWED_HOSTS = ["masterblender.pythonanywhere.com",
+                 "127.0.0.1",
+                 "localhost"]
 
 
 # Application definition
