@@ -1,0 +1,22 @@
+{% extends "collezioni/base.html" %}
+
+{% block content %}
+  <div>
+    <p>You chose to see the following bottle: <b>{{bottle.name}}</b>
+    , belonging to collection <b>{{bottle.collezione.title}}</b>
+  </div>
+  <div>
+    <p>Bottle id: {{bottle.id}}</p>
+    <p>Collezione: {{bottle.collezione.title}}</p>
+    <p>Bottle name: {{bottle.name}}</p>
+    <p>Distillery: {{bottle.distillery}}</p>
+    <p>Bottler: {{bottle.bottler}}</p>
+    <p>Age: {{bottle.age}}</p>
+    <p>Bottled in year: {{bottle.year_bottled}}</p>
+    <p>Date purchased: {{bottle.purchased_date}}</p>
+    <p>Purchased by: {{bottle.purchased_place}}</p>
+    <p>Price paid (euros): {{bottle.price}}</p>
+    <p>Bottle code: {{bottle.bottle_code}}</p>
+    <p>Age: {{bottle.age}}</p>
+  </div>
+{% endblock %}
