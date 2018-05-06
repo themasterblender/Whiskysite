@@ -1,0 +1,22 @@
+{% extends "collezioni/base.html" %}
+
+{% block content %}
+{%if coll %}
+  <div>
+    <p>You chose the following collection: <b>{{coll.title}}</b></p>
+  </div>
+  {% if bottles %}
+    <div>
+      {% for b in bottles %}
+        <li><a href="{% url 'collezioni:bottle_detail' b.id %}">{{b.name}}</a></li>
+      {% endfor %}
+    </div>
+  {% else %}
+    <div>
+      Sorry, no bottles in this collection... :-(
+    </div>
+  {% endif %}
+{% else %}
+  Sorry, this collection does not exist... :-(
+{% endif %}
+{% endblock %}

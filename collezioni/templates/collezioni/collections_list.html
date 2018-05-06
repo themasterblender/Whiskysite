@@ -1,0 +1,20 @@
+{% extends "collezioni/base.html" %}
+
+{% block content %}
+{% if collections %}
+  <div>
+    <p>Let's have a look at our collections...</p>
+  </div>
+  <div>
+    {% for c in collections %}
+      <h2><a href="{% url 'collezioni:collection_detail' c.id %}">{{c.title}}</a></h2>
+      <p>{{c.text}}</p>
+      <p>{{c.owner}}</p>
+    {% endfor %}
+  </div>
+{% else %}
+  <div>
+    Sorry, no collections available...:-(
+  </div>
+{% endif %}
+{% endblock %}

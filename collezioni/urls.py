@@ -3,8 +3,10 @@
 from django.urls import path
 from . import views
 
+app_name = 'collezioni'
 urlpatterns = [
-    path('', views.index, name='collezioni'),
-    path('<int:id_collezione>/', views.collezione_detail, name='Collection detail'),
-    path('bottle/<int:id_bottle>/', views.bottle_detail, name='Bottle detail'),
+    path('', views.collections_list, name='collections_list'),
+    path('<int:id_collezione>/', views.collection_detail, name='collection_detail'),
+    path('bottle/<int:id_bottle>/', views.bottle_detail, name='bottle_detail'),
 ]
+

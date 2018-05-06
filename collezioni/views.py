@@ -1,16 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Collezione, Bottle
 
-def index(request):
-    colls = Collezione.objects.all()
-    return render(request, 'collezioni/collezioni.html', {'colls': colls})
+def collections_list(request):
+    collections = Collezione.objects.all()
+    return render(request, 'collezioni/collections_list.html', {'collections': collections})
 
-def collezione_detail(request, id_collezione):
+def collection_detail(request, id_collezione):
+    coll = get_object_or_404(Collezione, id=id_collezione)
     bottles = Bottle.objects.filter(collezione_id=id_collezione)
-    collezione = Collezione.objects.get(id=id_collezione)
-    return render(request, 'collezioni/collezione_detail.html', {'bottles': bottles, 'collezione': collezione})
+    return render(request, 'collezioni/collection_detail.html', {'bottles': bottles, 'coll': coll})
 
 def bottle_detail(request, id_bottle):
-    b = Bottle.objects.get(id=id_bottle)
-    return render(request,'collezioni/bottle_detail.html', {'bottle': b})
+    bottle = get_object_or_404(Bottle, id=id_bottle)
+    return render(request,'collezioni/bottle_detail.html', {'bottle': bottle})
 
