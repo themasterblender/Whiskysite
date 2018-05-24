@@ -1,10 +1,6 @@
 {% extends "base_generic.html" %}
 
 {% block content %}
-{%if coll %}
-  <div>
-    <h1>Collection <strong>{{coll.title}}</strong>:</h1>
-  </div>
   {% if bottles %}
     <div>
       {% for b in bottles %}
@@ -13,10 +9,7 @@
     </div>
   {% else %}
     <div>
-      Sorry, no bottles in this collection... :-(
+      Sorry, no bottles... :-(
     </div>
   {% endif %}
-{% else %}
-  Sorry, this collection does not exist... :-(
-{% endif %}
 {% endblock %}

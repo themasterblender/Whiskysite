@@ -20,5 +20,8 @@ from . import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='Home Page'),
-    path('collezioni/', include('collezioni.urls'))
+    path('collezioni/', include('collezioni.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('register/', views.register, name='register_new_user'),
+    path('user_created/', views.user_created, name='user_created'),
 ]

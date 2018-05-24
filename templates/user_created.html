@@ -1,0 +1,5 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <p>User created, <a href="{% url 'login' %}?next={% url 'Home Page' %}">Click here to login</a></p>
+{% endblock %}

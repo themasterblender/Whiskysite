@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pz&09&n!prcy5ndfwqa!6@02x2$+fs2wxmw4f1+)$t-wz_j((9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["masterblender.pythonanywhere.com",
                  "127.0.0.1",
@@ -39,8 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'collezioni'
-]
+    'collezioni',
+	]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -57,7 +57,7 @@ ROOT_URLCONF = 'whiskysite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -122,3 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 16/05/2018: Redirect alla home page dopo il login:
+LOGIN_REDIRECT_URL = '/'
+
+# 16/05/2018: indirizza le e-mail sulla console
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

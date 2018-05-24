@@ -17,8 +17,14 @@ class Collezione(models.Model):
     def __str__(self):
         return self.title
 
+class Category(models.Model):
+    name = models.CharField(max_length=20)    
+    def __str__(self):
+        return self.name
+
 class Bottle(models.Model):
     collezione = models.ForeignKey('Collezione', on_delete=models.CASCADE)
+    whisky_type = models.ForeignKey('Category', on_delete=models.CASCADE)
     name = models.CharField(max_length=40)
     distillery = models.CharField(max_length=40, null=True, blank=True)
     bottler = models.CharField(max_length=40)

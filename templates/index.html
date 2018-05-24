@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Whiskysite</h1>
+
+  <p>Welcome to <em>Whiskysite</em>. This isn't a real website, just some pages published for test</p>
+  {% if user.is_authenticated %}
+    <p><a href="{% url 'collezioni:collections_list' %}"> Click here to see our collections </a></p>
+  {% else %}
+    <p>You must be authenticated in order to see our collection. 
+    <a href="{% url 'login' %}"> Please, login here... </a></p>
+    <p><a href = "{% url 'register_new_user' %}">... or here to get an account</a></p>
+
+  {% endif %}
+
+{% endblock %}

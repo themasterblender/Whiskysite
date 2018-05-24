@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+    <h1>Add new bottle(s) to collection <em>{{ coll.title }}</em>:</h1>
+    
+    {% if previousaction == "collectionsaved" %}
+        <p><strong>Collection saved!</strong> You can add more bottles to the collection filling the form here below:</p>
+    {% elif previousaction == "bottlesaved" %}
+        <p><strong>Bottle saved!</strong> You can add more bottles to the collection filling the form here below:</p>
+    {% else %}
+        <p>Attention: invalid argument {{ previousaction }}</p>
+    {% endif %}
+    
+    <form action="" method="post">
+        {% csrf_token %}
+        <table>
+        {{ form }}
+        </table>
+        <input type="submit" value="Submit" />
+    </form>
+    
+{% endblock %}
