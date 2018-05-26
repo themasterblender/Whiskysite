@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'pz&09&n!prcy5ndfwqa!6@02x2$+fs2wxmw4f1+)$t-wz_j((9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["masterblender.pythonanywhere.com",
                  "127.0.0.1",
@@ -120,7 +120,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticcollect/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticcollect') # STATIC_ROOT viene utilizzata dal comando collectstatic
 
 #aggiungo questa variabile per creare una static directory a livello globale (per il sito nel suo complesso)
