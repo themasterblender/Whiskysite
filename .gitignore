@@ -6,6 +6,6 @@ venv
 
 db.sqlite3
 
-/static
+/staticcollect
 
 .DS_Store
