@@ -1,10 +1,14 @@
-{% extends "base_generic.html" %}
+{% extends "collezioni/base_collezioni.html" %}
 
 {% block content %}
   {% if bottles %}
     <div>
       {% for b in bottles %}
-        <li><a href="{% url 'collezioni:bottle_detail' b.id %}">{{b.name}}</a></li>
+        <li><a href="{% url 'collezioni:bottle_detail' b.id %}">{{b.name}}</a>
+        {% if b.collezione.owner == user %}
+            ( <a href="{% url 'collezioni:bottle_update' b.id %}">edit</a> <a href="">delete</a> )
+        {% endif %}
+        </li>
       {% endfor %}
     </div>
   {% else %}

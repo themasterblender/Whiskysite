@@ -109,4 +109,11 @@ class CollezioneUpdate(LoginRequiredMixin, UpdateView):
 class CollezioneDelete(LoginRequiredMixin, DeleteView):
     model = Collezione
     success_url = reverse_lazy('collezioni:collections_list')
+    
+class BottleUpdate(LoginRequiredMixin, UpdateView):
+    model = Bottle
+    fields = ['whisky_type','name','distillery','bottler','age','year_bottled','purchased_date','purchased_place','price','bottle_code']
+    success_url = reverse_lazy('Home Page')
+
+
 

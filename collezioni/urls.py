@@ -13,5 +13,6 @@ urlpatterns = [
     path('bottle/create/<int:id_coll>/<str:previousaction>', views.bottle_create, name='bottle_create'),
     path('coll/<int:pk>/update/', views.CollezioneUpdate.as_view(), name='collection_update'),
     path('coll/<int:pk>/delete/', views.CollezioneDelete.as_view(), name='collection_delete'),
+    path('bottle/<int:pk>/update/', views.BottleUpdate.as_view(), name='bottle_update'),
 ]
 

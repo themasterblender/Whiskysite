@@ -121,7 +121,12 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+#STATIC_ROOT = os.path.join(BASE_DIR, 'static') # STATIC_ROOT viene utilizzata dal comando collectstatic
+
+#aggiungo questa variabile per creare una static directory a livello globale (per il sito nel suo complesso)
+STATICFILES_DIRS = [
+   os.path.join(BASE_DIR, "static"),
+]
 
 # 16/05/2018: Redirect alla home page dopo il login:
 LOGIN_REDIRECT_URL = '/'
