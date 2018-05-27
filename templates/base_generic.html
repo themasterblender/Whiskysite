@@ -32,7 +32,7 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       {% if user.is_authenticated %}
-        <li class="nav-item">User: {{ user.get_username }}</li>
+        <li class="nav-item"><a class="nav-link" href="">User: {{ user.get_username }}</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'Home Page' %}">Home</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'collezioni:collection_create' %}">Create your collection!</a></li>
@@ -51,21 +51,21 @@
       <h2>Masterblender</h2>
       <h5>Why I love the Scottish Highlands</h5>
       <div class="fakeimg"><img style='height: 100%; width: 100%; object-fit: contain' src="{% static 'images/landscape.jpg' %}"></div>
-      <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+      <p>Often, behind a whisky lover, there is a trip to Scotland. Well, this is my case!</p>
       <h3>Scotland memories</h3>
       <p>Unforgettable places...</p>
       <ul class="nav nav-pills flex-column">
         <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
+          <a class="nav-link active" href="">Landscapes</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="">Villages</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="#">Castles</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#">Disabled</a>
+          <a class="nav-link disabled" href="#">Distilleries</a>
         </li>
       </ul>
       <hr class="d-sm-none">
@@ -74,8 +74,8 @@
       <h2>Where the legend began</h2>
       <h5>How from the malt they get the golden spirit</h5>
       <div class="fakeimg"><img style='height: 100%; width: 100%; object-fit: contain' src="{% static 'images/EileanDonanCastle.jpg' %}"></div>
-      <p>Scottish distilleries are places full of charm and history...</p>
-      <p>From the ancient moonshiners to today industrial and innovative producers,
+      <p>Scottish distilleries are places full of charm and history...<BR>
+         From the ancient moonshiners to today industrial and innovative producers,
          Scottish distilleries are a reference point to which the world of whisky 
          never stopped to look and get inspiration.</p>
       <br>
