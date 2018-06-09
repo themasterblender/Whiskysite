@@ -19,13 +19,12 @@
 <body>
 
 <div class="jumbotron text-center" style="background-image:url({% static 'images/background.jpg'%})">
-
   <h1 style="font-size:50px; color:white">Whiskysite</h1>
   <p style="color:white">the home of all whisk(e)y lovers</p> 
 </div>
 
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
+  <a class="navbar-brand" href="{% url 'Home Page' %}">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -34,7 +33,7 @@
       {% if user.is_authenticated %}
         <li class="nav-item"><a class="nav-link" href="">User: {{ user.get_username }}</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'logout' %}?next={{request.path}}">Logout</a></li>
-        <li class="nav-item"><a class="nav-link" href="{% url 'Home Page' %}">Home</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" href="{% url 'Home Page' %}">Home</a></li> -->
         <li class="nav-item"><a class="nav-link" href="{% url 'collezioni:collection_create' %}">Create your collection!</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'collezioni:collections_list' %}">All collections</a></li>
         <li class="nav-item"><a class="nav-link" href="{% url 'collezioni:bottle_list' %}">All bottles</a></li>
@@ -45,45 +44,8 @@
   </div>  
 </nav>
 
-<div class="container" style="margin-top:30px">
-  <div class="row">
-    <div class="col-sm-4">
-      <h2>Masterblender</h2>
-      <h5>Why I love the Scottish Highlands</h5>
-      <div class="fakeimg"><img style='height: 100%; width: 100%; object-fit: contain' src="{% static 'images/landscape.jpg' %}"></div>
-      <p>Often, behind a whisky lover, there is a trip to Scotland. Well, this is my case!</p>
-      <h3>Scotland memories</h3>
-      <p>Unforgettable places...</p>
-      <ul class="nav nav-pills flex-column">
-        <li class="nav-item">
-          <a class="nav-link active" href="">Landscapes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="">Villages</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Castles</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#">Distilleries</a>
-        </li>
-      </ul>
-      <hr class="d-sm-none">
-    </div>
-    <div class="col-sm-8">
-      <h2>Where the legend began</h2>
-      <h5>How from the malt they get the golden spirit</h5>
-      <div class="fakeimg"><img style='height: 100%; width: 100%; object-fit: contain' src="{% static 'images/EileanDonanCastle.jpg' %}"></div>
-      <p>Scottish distilleries are places full of charm and history...<BR>
-         From the ancient moonshiners to today industrial and innovative producers,
-         Scottish distilleries are a reference point to which the world of whisky 
-         never stopped to look and get inspiration.</p>
-      <br>
-      {% block content %}
-      {% endblock %}
-    </div>
-  </div>
-</div>
+{% block content %}
+{% endblock %}
 
 <div class="jumbotron text-center" style="margin-bottom:0">
   <p>Footer</p>

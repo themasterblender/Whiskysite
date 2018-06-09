@@ -21,3 +21,16 @@ def register(request):
     
 def user_created(request):
     return render(request, 'user_created.html', {})
+    
+def landscapes_gallery(request):
+    return render(request, 'landscapes_gallery.html', {})
+    
+def villages_gallery(request):
+    return render(request, 'villages_gallery.html', {})
+    
+def castles_gallery(request):
+    return render(request, 'castles_gallery.html', {})
+
+def distilleries_gallery(request):
+    return render(request, 'distilleries_gallery.html', {})
+

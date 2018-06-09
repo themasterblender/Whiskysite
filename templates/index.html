@@ -1,16 +1,54 @@
 {% extends "base_generic.html" %}
 
+<head>
+  {% load static %}
+</head>
+
 {% block content %}
-<h2>What is Whiskysite?</h2>
-
-  <p>Welcome to <em>Whiskysite</em>. This isn't a real website, just some pages published for test</p>
-  {% if user.is_authenticated %}
-    <p><a href="{% url 'collezioni:collections_list' %}"> Click here to see our collections </a></p>
-  {% else %}
-    <p>You must be authenticated in order to see our collection. 
-    <a href="{% url 'login' %}"> Please, login here... </a></p>
-    <p><a href = "{% url 'register_new_user' %}">... or here to get an account</a></p>
-
-  {% endif %}
-
+<div class="container" style="margin-top:30px">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>Masterblender</h2>
+      <h5>Why I love the Scottish Highlands</h5>
+      <div class="fakeimg"><img style='height: 100%; width: 100%; object-fit: contain' src="{% static 'images/landscape.jpg' %}"></div>
+      <p>Often, behind a whisky lover, there is a trip to Scotland. Well, this is my case! <a href="">Read more...</a></p>
+      <h3>Scotland memories</h3>
+      <p>Unforgettable places...</p>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'landscapes_gallery' %}">Landscapes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'villages_gallery' %}">Villages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'castles_gallery' %}">Castles</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="{% url 'distilleries_gallery' %}">Distilleries</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+      <h2>Where the legend began</h2>
+      <h5>How from the malt they get the golden spirit</h5>
+      <div class="fakeimg"><img style='height: 100%; width: 100%; object-fit: contain' src="{% static 'images/EileanDonanCastle.jpg' %}"></div>
+      <p>Scottish distilleries are places full of charm and history...<BR>
+         From the ancient moonshiners to today industrial and innovative producers,
+         Scottish distilleries are a reference point to which the world of whisky 
+         never stopped to look and get inspiration. <a href="">Read more...</a></p>
+      <br>
+      <h2>What is Whiskysite?</h2>
+      <p>Welcome to <em>Whiskysite</em>. This isn't a real website, just some pages published for test</p>
+      {% if user.is_authenticated %}
+         <p><a href="{% url 'collezioni:collections_list' %}"> Click here to see our collections </a></p>
+      {% else %}
+         <p>You must be authenticated in order to see our collection. 
+         <a href="{% url 'login' %}"> Please, login here... </a></p>
+         <p><a href = "{% url 'register_new_user' %}">... or here to get an account</a></p>
+      {% endif %}
+    </div>
+  </div>
+</div>
 {% endblock %}

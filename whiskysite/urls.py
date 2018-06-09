@@ -24,4 +24,8 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('register/', views.register, name='register_new_user'),
     path('user_created/', views.user_created, name='user_created'),
+    path('gallery/landscapes/', views.landscapes_gallery, name='landscapes_gallery'),
+    path('gallery/villages/', views.villages_gallery, name='villages_gallery'),
+    path('gallery/castles/', views.castles_gallery, name='castles_gallery'),
+    path('gallery/distilleries/', views.distilleries_gallery, name='distilleries_gallery'),
 ]
