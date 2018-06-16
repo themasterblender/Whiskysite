@@ -132,4 +132,12 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/'
 
 # 16/05/2018: indirizza le e-mail sulla console
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# 16/06/2018 Imposto variabili EMAIL_ per utilizzare Gmail
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'masterblender18@gmail.com'
+EMAIL_HOST_PASSWORD = 'mbcasa2018'
+EMAIL_PORT = 587
+
